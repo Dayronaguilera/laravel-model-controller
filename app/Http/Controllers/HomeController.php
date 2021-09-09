@@ -9,10 +9,10 @@ use App\Movie; // colleghiamo il db movie al controller
 class HomeController extends Controller
 {
     public function index() { 
-        // return view('welcome');
-
-        $allMovie = Movie::all();
-
-        dump($allMovie);
+       
+        $allMovies = Movie::all(); // creo una varibile che va a chiedere tutti i film del db 
+        // dump($allMovies[0]->title);
+        
+        return view('home', compact('allMovies')); // passa alla view l'array dei singoli libri
     }
 }
